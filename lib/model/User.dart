@@ -1,0 +1,27 @@
+import 'package:chiti/utils/Utils.dart';
+
+class User {
+  int? id;
+  String? name;
+  String? phone;
+  String? email;
+  User();
+
+  Map<String, dynamic> toMap() {
+    var map = <String, dynamic>{
+      columnName: name,
+      columnPhone: phone,
+      columnEmail: email
+    };
+    if (id != null) {
+      map[columnId] = id;
+    }
+    return map;
+  }
+   User.fromMap(Map<String, dynamic> map) {
+    id = map[columnId];
+    name = map[columnName];
+    phone = map[columnPhone];
+    email = map[columnEmail];
+  }
+}
